@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalic Drops Marketplace</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-screen">
+        <div id="human-check">
+            <h2>Verify You Are Human</h2>
+            <button id="verify-btn">I'm Not a Robot</button>
+            <div class="semi-ring" style="display: none;"></div>
+            <p id="loading-text" style="display: none;">Verifying...</p>
+        </div>
+        <video id="intro-video" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999;">
+            <source src="vvv.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div id="trail"></div>
+    <div id="custom-cursor"></div>
+    <div class="bg-gradients"></div>
+    <div id="main-content">
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Metalic Drops</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn-favorites" aria-expanded="false" aria-controls="favorites-panel">Favorites</button>
+            <button class="btn-discord">Join</button>
+        </div>
+    </nav>
+    <div id="favorites-panel" class="favorites-panel" aria-hidden="true">
+        <div class="favorites-header">
+            <h4>Your favorites</h4>
+            <span id="favorites-count" class="favorites-count">0</span>
+            <button class="favorites-close" aria-label="Close favorites">×</button>
+        </div>
+        <ul id="favorites-list"></ul>
+        <p id="favorites-empty">No products in favorites.</p>
+    </div>
+    <div id="join-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="join-title">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h3 id="join-title">Join the community</h3>
+            <p>Choose what you want to do.</p>
+            <div class="modal-actions">
+                <a class="modal-btn secondary" href="https://discord.gg/aTr2MsSVw5" target="_blank" rel="noopener">
+                    <img class="modal-icon" src="discord.png" alt="" aria-hidden="true">
+                    Join the server
+                </a>
+                <a class="modal-btn secondary" href="https://guns.lol/javraj" target="_blank" rel="noopener">
+                    <img class="modal-icon" src="guns.png" alt="" aria-hidden="true">
+                    View guns.lol profile
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Purchase <span class="highlight">Premium Products</span> at Discounted Rates!</h1>
+            <p>Welcome to Metalic Drops Marketplace, your trusted hub for premium digital services and powerful tools designed to upgrade your online experience. Explore our fast-access solutions, seamless delivery system, and dedicated 24/7 support — all built to give you reliability, speed, and unmatched value.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Shop Now</button>
+                <button class="btn-secondary">Join Discord</button>
+            </div>
+        </div>
+        <div class="hero-logo">
+            <img src="logo.png" alt="Metalic Drops Logo">
+        </div>
+        <p class="powered-by">Powered by not.exotic.ton</p>
+    </section>
+
+    <div class="scrolling-strip">
+        <div class="scrolling-text">
+            Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace •
+        </div>
+        <div class="scrolling-text">
+            Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace • Metalic Drops Marketplace •
+        </div>
+    </div>
+
+    <section id="about" class="about">
+        <div class="badge">Want to know more about us?</div>
+        <h2>About Us</h2>
+        <p>Metalic Drops Marketplace is a trusted digital marketplace focused on quality, speed, and customer satisfaction. We offer premium digital products with seamless transactions and exceptional support.</p>
+    </section>
+
+    <section id="features" class="features">
+        <div class="badge">We have exciting features!</div>
+        <h2>Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>Seamless Payment</h3>
+                <p>Secure and easy payment options.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Cheap Prices</h3>
+                <p>Affordable premium products.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Trusted & Reputable Seller</h3>
+                <p>Reliable and verified sellers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Legal Methods</h3>
+                <p>All transactions are legal and safe.</p>
+            </div>
+            <div class="feature-card">
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock customer support.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Automatic Delivery</h3>
+                <p>Instant delivery after purchase.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Shop Products</h2>
+        <div class="product-grid">
+            <div class="product-card available">
+                <div class="product-image"><img src="product1.jpg" alt="Digital Product 1"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Inbox Searcher Tool">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Inbox Searcher Tool</h3>
+                <p>High-quality digital item.</p>
+                <p class="price">€6.99 <span class="original-price">€9.99</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product2.jpg" alt="Digital Product 2"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Spotify Premium Lifetime">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Spotify Premium Lifetime</h3>
+                <p>Exclusive digital asset.</p>
+                <p class="price">€4.99 <span class="original-price">€7.13</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product3.jpg" alt="Digital Product 3"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Spotify Premium 1 Month">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Spotify Premium 1 Month</h3>
+                <p>Limited edition item.</p>
+                <p class="price">€1.99 <span class="original-price">€2.84</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product4.jpg" alt="Digital Product 4"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Microsoft Fetcher Tool">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Microsoft Fetcher Tool</h3>
+                <p>Premium digital tool.</p>
+                <p class="price">€4.99 <span class="original-price">€7.13</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product5.jpg" alt="Digital Product 5"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Xbox Checker">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Xbox Checker</h3>
+                <p>New arrival — exclusive content pack.</p>
+                <p class="price">€2.99 <span class="original-price">€4.27</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product6.jpg" alt="Digital Product 6"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Hotmail Checker (Voxema)">♡</button>
+                <span class="discount-badge">Discount!</span>
+                <h3>Hotmail Checker (Voxema)</h3>
+                <p>Bundle with premium extras.</p>
+                <p class="price">€5.99 <span class="original-price">€8.56</span></p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+            <div class="product-card available">
+                <div class="product-image"><img src="product7.jpg" alt="Coming Soon Product"></div>
+                <button class="fav-heart" aria-label="Add to favorites" data-product="Coming Soon...">♡</button>
+                <h3>Coming Soon...</h3>
+                <p>New product launching soon.</p>
+                <p class="price">—</p>
+                <span class="status available">Available</span>
+                <button class="btn-buy">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">whomhill</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Excellent marketplace! Highly recommended for premium digital products.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">happennortherly</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Great service and fast delivery. Will buy again!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">venalthe</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Good experience overall. Reliable and trustworthy.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">hootinitial</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Amazing quality and support. Five stars!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">steadyhousing</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Very satisfied with the purchase. Quick and easy.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">exuberantcame</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Solid marketplace. No issues at all.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">methodicaldrowned</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Top-notch service! Love the automatic delivery.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">underfootdotterel</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Good prices and excellent customer support.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">capitalistsgot</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Reliable platform. Recommended for digital buys.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">evergreenregional</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Outstanding experience! Will return for more.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">retirementrestroom</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Fast and secure. Minor delays but overall great.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">axelcapitalist</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Decent service. Met expectations.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">vikingweather</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Premium quality products. Highly impressed!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">swordchangeable</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Good marketplace with 24/7 support.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">cheesecakebrave</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Satisfactory purchase. No complaints.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">deficitstreak</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Exceptional service and products!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">voicedebt</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Very good experience. Recommended.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">ebayhoneycomb</span>
+                    <div class="stars">★★★★</div>
+                </div>
+                <p>Reliable and easy to use.</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">impolitevindicator</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p>Best digital marketplace I've used!</p>
+            </div>
+            <div class="review-card">
+                <div class="review-header">
+                    <span class="username">confirmtriangle</span>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <p>Great support and fast transactions.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="badge">Want to know more about us?</div>
+        <h2>About Us</h2>
+        <p>We are the best choice for your needs. This shop has been open for just over 1 months and we already have a large clientele. Those who have bought know that we are serious people even if we have not been in the sector for long. Our goal is to satisfy as many people as possible without wasting too much time. I thank all the people who have bought and those who believed and trusted Metalic Drops..</p>
+        <ul class="footer-features">
+            <li>24/7 Customer Support</li>
+            <li>Instant Delivery</li>
+            <li>Most affordable pricing.</li>
+            <li>We accept PayPal and Digital payments!</li>
+        </ul>
+    </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
