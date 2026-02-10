@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body class="admin-body">
+    <div id="trail"></div>
+    <div id="custom-cursor"></div>
+    <div class="bg-gradients"></div>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>Admin Panel</h1>
+            <button id="admin-logout" class="admin-btn secondary" type="button">Logout</button>
+        </header>
+
+        <section id="admin-login" class="admin-card">
+            <h2>Login</h2>
+            <p>Inserisci la password per accedere.</p>
+            <form id="login-form">
+                <input id="login-password" type="password" placeholder="Password" autocomplete="current-password" required>
+                <button class="admin-btn primary" type="submit">Accedi</button>
+            </form>
+            <p id="login-error" class="admin-error" hidden>Password errata.</p>
+        </section>
+
+        <section id="admin-app" class="admin-card" hidden>
+            <div class="admin-grid">
+                <div class="admin-form">
+                    <h2 id="form-title">Aggiungi Prodotto</h2>
+                    <form id="product-form">
+                        <input id="product-name" type="text" placeholder="Nome" required>
+                        <input id="product-description" type="text" placeholder="Descrizione">
+                        <input id="product-price" type="text" placeholder="Prezzo (es. €4.99)">
+                        <input id="product-original-price" type="text" placeholder="Prezzo originale">
+                        <input id="product-image" type="text" placeholder="Immagine (URL o nome file)">
+                        <div class="upload-row">
+                            <input id="product-image-file" type="file" accept="image/*" hidden>
+                            <button class="admin-btn secondary" id="image-upload-btn" type="button">Carica dal dispositivo</button>
+                            <span id="image-upload-name">Nessun file</span>
+                        </div>
+                        <input id="product-badge" type="text" placeholder="Badge (es. Discount!)">
+                        <input id="product-status" type="text" placeholder="Status (es. Available)">
+                        <input id="product-cta" type="text" placeholder="Testo pulsante (es. Buy Now)">
+                        <input id="product-link" type="text" placeholder="Link (solo se serve)">
+                        <label class="admin-checkbox">
+                            <input id="product-available" type="checkbox" checked>
+                            Disponibile
+                        </label>
+                        <div class="admin-actions">
+                            <button class="admin-btn primary" type="submit">Salva</button>
+                            <button class="admin-btn secondary" id="form-cancel" type="button" hidden>Annulla</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="admin-list">
+                    <h2>Prodotti</h2>
+                    <div id="products-list" class="list"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="/admin.js"></script>
+</body>
+</html>
